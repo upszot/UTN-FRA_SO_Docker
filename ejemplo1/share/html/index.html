@@ -1,0 +1,5 @@
+<h1> Ejemplo-01 </h1> 
+<h2> index.html shareado desde el host al docker: </h2> 
+
+  docker run  -d   -p 80:80 -v "$PWD"/share/html:/usr/share/nginx/html nginx
+
