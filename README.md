@@ -14,7 +14,12 @@ sudo usermod -a -G docker $(whoami)
 ```
 - Servicio de docker corriendo 
 ```sh
+#Pongo el servicio de docker en enable -> (Para que tras un reinicio se levante)
+#Pongo el servicio de docker en runnig
 sudo systemctl enable --now docker
+
+#sudo valido el estado del servicio
+sudo systemctl status docker
 ```
 
 
@@ -41,10 +46,13 @@ sudo systemctl enable --now docker
   - [kubernetes](https://kubernetes.io/)
   - [minikube](https://minikube.sigs.k8s.io/docs/start/)
   - [video: Pelado Nerd - Kubernetes](https://www.youtube.com/watch?v=CV_Uf3Dq-EU&t=2867s)
- 
-- ### Openshift / OKD
-  - [OKD](https://www.okd.io/)
 
+- ### OKD (The Community Distribution of Kubernetes that powersRed Hat OpenShift)
+  - [OKD](https://www.okd.io/)
+ 
+- ### Openshift (OCP)
+  - [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift)
+  - [Red Hat OpenShift Local](https://console.redhat.com/openshift/create/local)
 
 ## Test de tecnologias via web
   - [Play with Docker](https://labs.play-with-docker.com/)
@@ -70,5 +78,8 @@ ssh usuario@server -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ss
 
 
   - [Play with Openshift](https://developers.redhat.com/developer-sandbox/activities/learn-kubernetes-using-red-hat-developer-sandbox-openshift)
+  
+  https://www.redhat.com/en/interactive-labs/red-hat-openshift-4.11-playground
+
  Requiere que se creen una cuenta de developer en redhat (es free)
  
