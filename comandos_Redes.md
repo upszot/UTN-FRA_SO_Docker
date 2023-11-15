@@ -53,19 +53,33 @@ sudo nmap -PS -p 22 host1
 ## Jugando con las conecciones...
 
 ### nc (netcat)
-- Forma rapida de verificar si tengo habilitacion de trafico de red entre 2 equipos.
-  - En el Host1, Abro el puerto 1337 en modo Listened 
+##### Una forma rapida de verificar si tengo habilitacion de trafico de red entre 2 equipos.
+- En el Host1, Abro el puerto 1337 en modo Listened 
  ```sh
  nc -l -p 1337
  ```  
- - En el Host2, redirecciono un texto hacia el comando nc <host1> <puerto>
+- En el Host2, redirecciono un texto hacia el comando nc <host1> <puerto>
  ```sh
  echo "Prueba de envio de mensaje a la raspberryPi4 por el puerto Leet ;-)  " |nc rpi4 1337
  ```
- <div>
-<table >
-<td> Ejemplo de enviar mensaje con nc </td>
-<td> <img src="./img/nc_01.png" width="1080" align="left" > </td>  
+<div>
+<table>
+<img src="./img/nc_01.png" width="1080" align="left" > 
 </table>
 </div>
- 
+
+
+##### Tambien podria enviar un archivo sin necesidad de recurrir a un scp (copy por ssh)
+- En el Host1, abro el puerto deseado y redirecciono la salida al comando tee en modo append para que me mueste por pantalla y me escriba el archivo
+ ```sh
+ nc -l -p 1337  | tee -a /tmp/archivo_via_nc
+ ```    
+- En el Host2, envio la salida de un cat hacia el comando nc <host1> <puerto>
+ ```sh
+ cat /etc/hosts  |nc rpi4 1337
+ ```
+<div>
+<table>
+<img src="./img/nc_02.png" width="1080" align="left" > 
+</table>
+</div>
