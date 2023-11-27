@@ -8,7 +8,7 @@
 - Se debera tener instalado los siguientes paquetes:
 		- git
 		- docker
-- Agregar tu usuario al grupo "docker"
+- Agregar tu usuario al grupo "docker" y luego relogearse
 ```sh
 sudo usermod -a -G docker $(whoami)
 ```
