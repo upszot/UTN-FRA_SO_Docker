@@ -41,7 +41,7 @@ sudo systemctl status docker
   - [Instalacion de docker](https://docs.docker.com/engine/install)
   - [Registry -> docker hub](https://hub.docker.com/)
   - [CheatSheet-Docker](https://dockerlabs.collabnix.com/docker/cheatsheet)
-  - [CheatSheet-oc-cli]([https://dockerlabs.collabnix.com/docker/cheatsheet](https://cheatography.com/itservicestart-up/cheat-sheets/oc-cli-commands/pdf/))
+  - [CheatSheet-oc-cli](https://cheatography.com/itservicestart-up/cheat-sheets/oc-cli-commands/pdf/?last=1479976646)
   - [video: Pelado Nerd - Docker](https://www.youtube.com/watch?v=CV_Uf3Dq-EU&t=2867s)
 - ### Kubernetes
   - [kubernetes](https://kubernetes.io/)
