@@ -1,4 +1,4 @@
-# SO_Docker
+# UTN-FRA_SO_Docker
 
 	UTN - Arquitectura y Sistemas Operativos
 	El presente repo tiene la finalidad de dar una introduccion a Docker
