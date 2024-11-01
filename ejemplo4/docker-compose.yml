@@ -1,0 +1,43 @@
+version: '3.8'  # Actualizamos la versión de Docker Compose
+
+services:
+  web:
+    image: nginx:latest
+    #ports:
+    #  - "8080-8085:80"  # Exponemos el puerto 8080 del host al puerto 80 del contenedor
+    volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/default.conf
+    deploy:
+      replicas: 3  # Añadimos 3 réplicas para el servicio web
+      resources:
+        limits:
+          cpus: "0.5"  # Limite máximo de CPUs para cada réplica
+          memory: "256M"  # Limite máximo de memoria para cada réplica
+    networks:
+      - code-network
+
+  php:
+    image: php:fpm
+    volumes:
+      - ./code:/code
+      - /var/run/docker.sock:/var/run/docker.sock  # Montamos el socket de Docker
+    networks:
+      - code-network
+
+  # Añadimos un nuevo servicio de balanceo de carga usando HAProxy
+  haproxy:
+    image: haproxy:latest
+    ports:
+      - "8080:80"  # Exponemos el puerto 80 del host al puerto 80 de HAProxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg  # Montamos la configuración personalizada de HAProxy
+    depends_on:
+      - web  # Aseguramos que HAProxy espera a que los contenedores de Nginx estén listos
+    networks:
+      - code-network
+
+networks:
+  code-network:
+    driver: bridge
+

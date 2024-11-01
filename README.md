@@ -33,6 +33,7 @@ sudo systemctl status docker
 | ejemplo1 			| docker run nginx shareando carpeta 		|
 | ejemplo2 			| Haciendo una imagen 							|
 | ejemplo3		 	| Ejemplo de docker-compose web con php 	|
+| Extras		 	| [Libro en español de docker](./Extras/docker-es.pdf) 	|
 
 
 ## Documentacion de referencia 
@@ -43,6 +44,8 @@ sudo systemctl status docker
   - [CheatSheet-Docker](https://dockerlabs.collabnix.com/docker/cheatsheet)
   - [CheatSheet-oc-cli](https://cheatography.com/itservicestart-up/cheat-sheets/oc-cli-commands/pdf/?last=1479976646)
   - [video: Pelado Nerd - Docker](https://www.youtube.com/watch?v=CV_Uf3Dq-EU&t=2867s)
+  - [La historia de los contenedores - Desde 1979 a 2021](https://www.youtube.com/watch?v=K0nHZlHNfQ4)
+  
 - ### Kubernetes
   - [kubernetes](https://kubernetes.io/)
   - [minikube](https://minikube.sigs.k8s.io/docs/start/)
